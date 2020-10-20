@@ -12,14 +12,50 @@
 </head>
 
 <body>
-    <h2>Get Inked</h2>
     <div class="container">
-        <div id="shops"></div>
+        
+        <header class="header">
+            <h2>Get Inked</h2>
+            <input type="text" class="search__input" placeholder="Search for Tattoo Shop">
+        </header>
+        
+        <div class="content">
+            <nav class="sidebar">
+                This is sidebar
+                <div class="photo">Photo</div>
+                <div class="photo">Location</div>
+            </nav>
+            
+            <main class="shop-view">
+                <div id="shops">
+
+                </div>
+
+                <div class="shops-map" id="map">
+                    This is the map area
+                </div>
+
+                <div class="shops-contact">
+                    Book your appointment now
+                </div>
+            </main>
+            
+        </div>
+        
     </div>
+    
+
+
+
+
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="scripts/script.js"></script>
+
+    <script src="scripts/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTfTX8eJxHIMkIQ_laD4v1KDW3UuDUqow&callback=initMap"></script>
 </body>
 </html>

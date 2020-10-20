@@ -965,12 +965,12 @@ function renderShops (shopsToRender) {
                         <h5 class="card-title">${shop.name}</h5>
                         <p class="card-text">${shop.formatted_address}</p>
                         <p class="card-text">${shop.user_ratings_total}</p>
-                        <a href="./map/map.html" onclick="saveLocation(${shop.geometry.location.lat},${shop.geometry.location.lng})"class="btn btn-dark">Shop Details</a>
+                        <a href="#" onclick="saveLocation(${shop.geometry.location.lat},${shop.geometry.location.lng});initMap()" class="btn btn-dark">Shop Details</a>  
                     </div>
                 </div>
             </div>
         `
-    }).join('');
+    }).join('');  // Joe didn't include the initMap() funciton in the a tag
     return shops;
 };
 

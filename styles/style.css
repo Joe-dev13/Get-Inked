@@ -1,18 +1,57 @@
-#shops {
+.container {
+    width: 1200px;
+    height: 1500px;
+}
+
+.header {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    background-color: red;
+}
+
+.content {
+    display: flex;
+    width: 1200px;
+}
+
+.sidebar {
+    background: green;
+}
+
+.shop-view {
+    display: flex;
+    flex-direction: column;
+}
+
+#shops {
+    background-color: blue;
+    overflow-x: scroll;
+    display: flex;
+    
+    width: 1000px;
 }
 
 #card-wrapper {
     margin-top: 20px;
 }
 
+.shops-map {
+    background-color: yellow;
+    height: 400px;
+    width: 100%;
+}
+
 /* Set the size of the div element that contains the map */
 #map {
-    height: 400px;
+    height: 500px;
     /* The height is 400 pixels */
     width: 100%;
     /* The width is the width of the web page */
 }
+
+.shops-contact {
+    background-color: orchid;
+    padding: 2.5rem;
+}
+
+
+
