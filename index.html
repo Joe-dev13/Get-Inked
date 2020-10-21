@@ -8,6 +8,10 @@
 
     <link rel="stylesheet" href="styles/style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
     <title>Get Inked</title>
 </head>
 
@@ -15,15 +19,13 @@
     <div class="container">
         
         <header class="header">
-            <h2>Get Inked</h2>
+            <img id="logo" src="images/logo.png">
+          
             <input type="text" class="search__input" placeholder="Search for Tattoo Shop">
         </header>
         
         <div class="content">
-            <nav class="sidebar">
-                This is sidebar
-                <div class="photo">Photo</div>
-                <div class="photo">Location</div>
+            <nav id="sidebar">
             </nav>
             
             <main class="shop-view">
@@ -33,6 +35,10 @@
 
                 <div class="shops-map" id="map">
                     This is the map area
+                </div>
+
+                <div class="shops-gallery" id="gallery">
+                    This is the gallery area
                 </div>
 
                 <div class="shops-contact">
@@ -57,5 +63,6 @@
 
     <script src="scripts/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTfTX8eJxHIMkIQ_laD4v1KDW3UuDUqow&callback=initMap"></script>
+    <script src="scripts/nav.js"></script>
 </body>
 </html>
