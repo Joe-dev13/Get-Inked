@@ -14,6 +14,7 @@ function initMap() {
     });
 };
 
+
 function renderNav () {
     return `
     <input type="checkbox" id="check">
@@ -26,7 +27,7 @@ function renderNav () {
     <ul>
         <li><a href="#" onclick="initMap()"><i class="fas fa-map-marker-alt"></i>Location</a></li>
         <li><a href="#" onclick="initMap()"><i class="fas fa-camera-retro"></i>Pictures</a></li>
-        <li><a href="#" onclick="initMap()"><i class="far fa-comment"></i>Reviews</a></li>
+        <li><a href="#" onclick="renderForms()"><i class="far fa-comment"></i>Reviews</a></li>
         <li><a href="#" onclick="initMap()"><i class="far fa-address-card"></i>About Us</a></li>
         <li><a href="#" onclick="initMap()"><i class="far fa-copyright"></i>Legal Section</a></li>
         <li><a href="#" onclick="initMap()"><i class="far fa-envelope"></i>Contact</a></li>
