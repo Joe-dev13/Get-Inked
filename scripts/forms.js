@@ -13,7 +13,9 @@ function saveReview(event) {
     // Adding the text object to the comments array. 
     comments.push(text);
     // Setting the HTML of the comments div equal to the result of the renderComments function.
-    document.getElementById('comments').innerHTML = renderComments(comments)
+    let reviews = document.createElement('div');
+    document.getElementById('comments').appendChild(reviews);
+    reviews.innerHTML = renderComments(comments)
 };
 
 
