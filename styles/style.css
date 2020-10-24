@@ -15,6 +15,7 @@ body {
     box-sizing: border-box;
     margin: 0px;
     width: 100%;
+    display: flex;
 }
 
 .header {
@@ -23,6 +24,12 @@ body {
     width: 100vw;
     position: fixed;
     z-index: 10;
+    height: 75px;
+}
+
+.header::after {
+  content: "";
+  height: 75px;
 }
 
 #logo {
@@ -38,12 +45,12 @@ body {
 }
 
 /* start sidebar */
-.siderbar{
+.sidebar {
   position: fixed;
   top: 0;
   left: 0;
   width: 70px;
-  height: 100vh;
+  height: 100%;
   background-color: #fff;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -51,17 +58,18 @@ body {
   white-space: nowrap;
   box-shadow: 0px 0px 20px #d4d4d4;
   transition: .3s ease;
-  margin-top: 50px;
-  z-index: 100px;
+  
 }
 
 .sidebar:hover{
   width: 270px;
   overflow-y: scroll;
   position: fixed;
+  z-index: 100px;
 }
 
 .sidebar .menu-item{
+  margin-top: 50px;
   padding: 10px;
 }
 
@@ -120,7 +128,12 @@ body {
 }
 
 .shops-gallery {
-    display: block;
+  display: block;
+  background-color: yellow;
+  height: 400px;
+  width: 100vw;
+  display: none;
+
     /*display: none;            <- this is how we change from gallery map */
 }
 
@@ -133,11 +146,14 @@ body {
 }
 
 .shops-contact {
-    background-color: orchid;
-    padding: 2.5rem;
+  background-color: orchid;
+  padding: 2.5rem;
+  display: none;
 }
 
-
+.contact-btn {
+  background-color: #d6d6d6;
+}
 
 
 

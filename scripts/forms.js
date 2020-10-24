@@ -68,6 +68,6 @@ function renderForms() {
     `
 };
 // Setting the HTML of the forms div equal to the result of the renderForms() function.
-document.querySelector('.shops-contact').innerHTML = renderForms();
+document.querySelector('.shops-review').innerHTML = renderForms();
 // Taking the submitButton and adding a click event listener to it that runs the saveReview() once the event has happened.
 document.getElementById('submitButton').addEventListener('click', saveReview);
