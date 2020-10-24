@@ -8,9 +8,6 @@ function renderNav () {
             <li class="menu-item"><a href="#" onclick="renderContact()"><i class="far fa-envelope"></i>Contact</a></li>
             <li class="menu-item"><a href="#" onclick="initMap()"><i class="far fa-address-card"></i>About Us</a></li>
         </ul>
-        <div class="legal">
-            &copy; 2020 by Get Inked. All rights reserved.
-        </div>
         </div>
     `
 }
