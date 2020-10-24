@@ -7,25 +7,26 @@ var shopHTML;
 function initialize() {
   shopHTML = document.getElementById('shops');
   infowindow = new google.maps.InfoWindow();
-  var houston = new google.maps.LatLng(29.749907,-95.3584216);
-
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: houston,
-      zoom: 15
+  const locationButton = document.getElementById('location');
+  
+  const res = axios.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0')
+    .then(function(response){
+      var geolocation = new google.maps.LatLng(response.data.location.lat,response.data.location.lng);
+            map = new google.maps.Map(document.getElementById('map'), {
+        center: geolocation,
+        zoom: 15
+      });
+    
+      var request = {
+        location: geolocation,
+        radius: '500',
+        query: 'tattoo shops'
+      };
+      service = new google.maps.places.PlacesService(map);
+      service.textSearch(request, callback);
+    }).catch(function(error){
+      console.log(error);
     });
-
-  var request = {
-    location: houston,
-    radius: '500',
-    query: 'tattoo shops'
-  };
-  service = new google.maps.places.PlacesService(map);
-  service.textSearch(request, callback);
-}
-
-function saveLocation(lat,lng){
-    localStorage.setItem("lat", lat);
-    localStorage.setItem("lng", lng);
 }
 
 function callback(results, status) {
