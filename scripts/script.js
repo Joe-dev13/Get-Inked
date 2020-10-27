@@ -35,8 +35,9 @@ function callback(results, status) {
       var place = currentShop;
       createMarker(currentShop);
       
-      return `<div id="card-wrapper">
-                <div class="card" style="width: 18rem;">
+      return `
+            <div id="card-wrapper">
+                <div class="card card-style">
                   <div class="card-body">
                     <h5 class="card-title">${place.name}</h5>
                     <p class="card-text">${place.formatted_address}</p>
@@ -44,7 +45,8 @@ function callback(results, status) {
                     <a href="#" onclick="saveLocation(${place.geometry.location.lat},${place.geometry.location.lng});initMap()"class="btn btn-dark">Shop Details</a>
                   </div>
                 </div>
-              </div>`
+              </div>
+        `
       })
     map.setCenter(results[0].geometry.location);
     shopHTML.innerHTML = shops.join('');

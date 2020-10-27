@@ -9,10 +9,10 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0px;
+    /* margin: 0px; */
   }
 
-.container {
+.contentWrapper {
     box-sizing: border-box;
     margin: 0px;
 }
@@ -38,7 +38,12 @@ body {
 
 .content {
     display: flex;
-    top: 50px;
+    /* top: 50px; */
+
+
+    height: 100vh;
+    margin-left: 75px;
+    overflow:hidden;
 }
 
 /* start sidebar */
@@ -100,7 +105,7 @@ body {
     flex-direction: column;
     margin-top: 80px;
     position: relative;
-    margin-left: 70px;
+    /* margin-left: 70px; */
 }
 
 #shops {
@@ -108,10 +113,12 @@ body {
     overflow-x: scroll;
     display: flex;
     width: 100vw;
+    /* height: 450px; */
+    border-style: solid;
 }
 
 #card-wrapper {
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .shops-map {
@@ -133,7 +140,7 @@ body {
 
 /* Set the size of the div element that contains the map */
 #map {
-    height: 400px;
+    height: 450px;
     /* The height is 400 pixels */
     width: 100vw;
     /* The width is the width of the web page */
@@ -154,3 +161,11 @@ body {
   justify-content: center;
 }
 
+.form{
+    width: 1355px;
+}
+
+.card-style{
+    width: 18rem;
+    height: 100%;
+}
