@@ -14,6 +14,8 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0&callback=initialize&libraries=places&v=weekly" defer></script>
 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
     <title>Get Inked</title>
 </head>
 
@@ -22,7 +24,7 @@
         
         <header class="header">
             <img id="logo" src="images/logo.png">
-            <input type="text" class="search__input" placeholder="Search for Tattoo Shop">
+            <input id="address" type="text" class="search__input" placeholder="Type your address">
             <button type="button" id="location">Find your Location</button>
         </header>
         <nav id="sidebar">
