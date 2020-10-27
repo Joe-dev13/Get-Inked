@@ -43,28 +43,30 @@ function renderComments(comments) {
 // This Function renders the form that is filled out to the DOM.
 function renderForms() {
     return `
-<form>
-    <div class="form-group">
-    <label for="exampleFormControlInput1">Full Name</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+    <div class = "form">
+        <form>
+            <div class="form-group">
+            <label for="exampleFormControlInput1">Full Name</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Full Name">
+            </div>
+            <div class="form-group">
+            <label for="exampleFormControlSelect1">Star Rating</label>
+                <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div> 
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Leave a Review"></textarea>
+            </div>
+            <div>
+            <button id="submitButton" type="submit" class="btn btn-dark">Submit Review</button>
+            </div>
+        </form>
     </div>
-    <div class="form-group">
-    <label for="exampleFormControlSelect1">Star Rating</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-        </select>
-    </div> 
-    <div class="form-group">
-        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Leave a Review"></textarea>
-    </div>
-    <div>
-    <button id="submitButton" type="submit" class="btn btn-dark">Submit Review</button>
-    </div>
-</form>
     `
 };
 // Setting the HTML of the forms div equal to the result of the renderForms() function.
