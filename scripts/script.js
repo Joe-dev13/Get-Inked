@@ -99,7 +99,12 @@ function callback(results, status) {
 
 function createMarker(place) {
     var iconBase = 'images/marker.png';
-    let marker = new google.maps.Marker({map,position: place.geometry.location,icon: iconBase});
+    let marker = new google.maps.Marker({map,
+      position: place.geometry.location,
+      icon: iconBase
+      // icon: 'https://img.icons8.com/color/48/000000/tattoo-machine.png'
+    });
+
     google.maps.event.addListener(marker, "click", () => {
       infowindow.setContent(place.name);
       infowindow.open(map, marker);

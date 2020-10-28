@@ -161,10 +161,17 @@ body {
   display: block;
   background-color: yellow;
   height: 400px;
-  width: 100vw;
+  width: 80vw;
   display: none;
 
     /*display: none;            <- this is how we change from gallery map */
+}
+
+.gallery {
+  display: flex;
+  height: 400px;
+  width: 80vw;
+  overflow-x: scroll;
 }
 
 /* Set the size of the div element that contains the map */
