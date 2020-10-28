@@ -16,6 +16,8 @@
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
     <title>Get Inked</title>
 </head>
 
@@ -24,24 +26,34 @@
         
         <header class="header">
             <img id="logo" src="images/logo.png">
-            <input id="address" type="text" class="search__input" placeholder="Type your address">
-            <button type="button" id="location">Find your Location</button>
+            <h2 class="title">Wanna Get Inked?</h2>
+            <div class="search"> 
+                <input id="address" type="text" class="search__input" placeholder="Search for Tattoo Shop">
+                <button id="location" class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </div>
         </header>
-        <nav id="sidebar">
-        </nav>
+        
         <div class="content">
+            <nav id="sidebar">
+            </nav>
             
             <main class="shop-view">
-                <div id="shops"></div>
+                <div id="shops">
 
-                <div class="shops-map" id="map"></div>
+                </div>
+
+                <div class="shops-map" id="map">
+                    This is the map area
+                </div>
 
                 <div class="shops-gallery" id="gallery">
                     This is the gallery area
                 </div>
 
-                <!-- <div class="shops-review" id="review"></div> -->
-                <!-- <div id="comments"></div> -->
+                <div class="shops-review" id="review">
+                    This is the review section
+                </div>
+                <div id="comments"></div>
                 
                 <div class="shops-contact" id ="contact">
                     Book your appointment now
@@ -52,6 +64,10 @@
                     &copy; 2020 by Get Inked. All rights reserved.
                 </div>
             </main>
+
+            <div class="ads">
+                This is the ads area
+            </div>
             
         </div>
         
