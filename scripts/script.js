@@ -10,7 +10,7 @@ function initialize() {
   infowindow = new google.maps.InfoWindow();
   const locationButton = document.getElementById('location');
   
-  axios.post('https://www.googleapiss.com/geolocation/v1/geolocate?key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0')
+  axios.post('https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0')
     .then(function(response){
       var geolocation = new google.maps.LatLng(response.data.location.lat,response.data.location.lng);
             map = new google.maps.Map(document.getElementById('map'), {

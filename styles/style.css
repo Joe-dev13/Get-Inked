@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
 
+
 *{
   margin: 0px;
   padding: 0px;
@@ -9,7 +10,8 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    /* margin: 0px; */
+    margin: 0px;
+    background-color: lightgray;
   }
 
 .contentWrapper {
@@ -19,11 +21,14 @@ body {
 
 .header {
     display: flex;
-    background-color: #a4ceae;
+    background: linear-gradient(0.25turn, #cfcfcf, #efeff3, #0a0a0a);
     width: 100vw;
     position: fixed;
     z-index: 10;
     height: 75px;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
 }
 
 .header::after {
@@ -31,19 +36,35 @@ body {
   height: 75px;
 }
 
+.title{
+  font-family: 'Lobster', cursive;
+}
+
 #logo {
   width: 75px;
   height: 75px;
 }
 
+.search{
+  display: flex;
+  justify-content: space-between;
+  margin-right: -240px;
+}
+
+.search__input{
+  height: 40px;
+  display: flex;
+  align-content: center;
+  border: 2px solid #14213D;
+  justify-content: center;
+  border-radius: 10px;
+  width: 500px;
+}
+
 .content {
     display: flex;
-    /* top: 50px; */
-
-
-    height: 100vh;
-    margin-left: 75px;
-    overflow:hidden;
+    top: 50px;
+    width: 100vw;
 }
 
 /* start sidebar */
@@ -63,7 +84,7 @@ body {
 }
 
 .sidebar:hover{
-  width: 270px;
+  width: 200px;
   overflow-y: scroll;
 }
 
@@ -81,7 +102,7 @@ body {
   width: 40px;
   padding: 5px;
   padding-left: 20px;
-  color: gray;
+  color: #8F8A8E;
   text-decoration: none;
 }
 .sidebar .menu-item a i{
@@ -89,14 +110,14 @@ body {
   width: 40px;
   padding-left: 0px;
   padding-right: 20px;
-  color: gray;
+  color: #8F8A8E;
 }
 
 .sidebar .menu-item:hover > a{
-  color: blue;
+  color: black;
 }
 .sidebar .menu-item:hover > a i{
-  color: blue;
+  color: black;
 }
 /* end sidebar */
 
@@ -105,23 +126,31 @@ body {
     flex-direction: column;
     margin-top: 80px;
     position: relative;
-    /* margin-left: 70px; */
+    margin-left: 70px;
+    width: 80vw;
 }
 
 #shops {
-    background-color: blue;
+    background-color: none;
     overflow-x: scroll;
     display: flex;
-    width: 100vw;
-    /* height: 450px; */
-    border-style: solid;
+    width: 80vw;
+    align-content: center;
 }
 
 #card-wrapper {
-    /* margin-top: 20px; */
+  display: flex;
+  justify-content: center;
+  
+}
+
+.card-title{
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .shops-map {
+    margin-top: 20px;
     background-color: yellow;
     height: 100%;
     width: 100vw;
@@ -140,14 +169,13 @@ body {
 
 /* Set the size of the div element that contains the map */
 #map {
-    height: 450px;
+    height: 400px;
     /* The height is 400 pixels */
-    width: 100vw;
+    width: 80vw;
     /* The width is the width of the web page */
 }
 
 .shops-contact {
-  background-color: orchid;
   padding: 2.5rem;
   display: none;
 }
@@ -155,17 +183,38 @@ body {
 .contact-btn {
   background-color: #d6d6d6;
 }
+/*shops review start*/
+.shops-review {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  align-content: center;
+  margin-top: 20px;
+}
+
+.form-group {
+  width: 1000px;
+}
+
+#comments{
+  display: flex;
+  flex-flow: wrap;
+}
+/* shops review end*/
 
 .legal{
   display: flex;
   justify-content: center;
 }
 
-.form{
-    width: 1355px;
-}
-
-.card-style{
-    width: 18rem;
-    height: 100%;
+.ads{
+  margin-left: 10px;
+  width: 13vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border: 1px black solid;  
+  margin-top: 80px;
+  background-color: #80AAA6
+  ;
 }
