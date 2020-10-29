@@ -1,7 +1,7 @@
 var galleryImage = document.querySelector(".gallery");
 
-function getPictures(results) {
-    fetch("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=" + results.place_id + "&key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0")
+function getPictures(shop) {
+    fetch("https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?place_id=" + shop.place_id + "&key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0")
     .then(response => response.json())
     .then(data => {
         var photos = data.result.photos;

@@ -4,7 +4,7 @@ var infowindow;
 var shop = [];
 var shopHTML;
 var geocoder;
-var pictures = [];
+var shopsData = [];
 
 function initialize() {
   shopHTML = document.getElementById('shops');
@@ -88,8 +88,9 @@ function callback(results, status) {
                     <h5 class="card-title">${place.name}</h5>
                     <p class="card-text">${place.formatted_address}</p>
                     <p class="card-text">${place.user_ratings_total}</p>
-                    <a href="#" onclick="saveLocation(${place.geometry.location.lat},${place.geometry.location.lng})"class="btn btn-dark">Shop Details</a>
-                    <a href="#" onclick="getPictures(pictures[${index}])" class="btn btn-dark">Photos</a>
+                    <a href="#" onclick="" class="btn btn-dark">Shop Details</a>
+                    <a href="#" onclick="locate(shopsData[${index}])" class="btn btn-dark">Locate</a>
+                    <a href="#" onclick="getPictures(shopsData[${index}])" class="btn btn-dark">Photos</a>
                   </div>
                 </div>
               </div>`
@@ -97,7 +98,7 @@ function callback(results, status) {
     map.setCenter(results[0].geometry.location);
     shopHTML.innerHTML = shops.join('');
 
-    pictures = results;
+    shopsData = results;
   }
 }
 
@@ -113,4 +114,9 @@ function createMarker(place) {
       infowindow.setContent(place.name);
       infowindow.open(map, marker);
     });
+  }
+
+
+  function locate(shop) {
+    map.setCenter(shop.geometry.location);
   }
