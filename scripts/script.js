@@ -4,6 +4,7 @@ var infowindow;
 var shop = [];
 var shopHTML;
 var geocoder;
+var shopsData = [];
 
 function initialize() {
   shopHTML = document.getElementById('shops');
@@ -15,7 +16,7 @@ function initialize() {
     var geolocation = new google.maps.LatLng(response.data.location.lat,response.data.location.lng);
       map = new google.maps.Map(document.getElementById('map'), {
         center: geolocation,
-        zoom: 15
+        zoom: 13
       });
       var request = {
         location: geolocation,
@@ -75,10 +76,9 @@ function typeAddress(){
   }
 }
 
-
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
-    var shops = results.map(function(currentShop){
+    var shops = results.map(function(currentShop, index){
       var place = currentShop;
       createMarker(currentShop);
       
@@ -88,13 +88,17 @@ function callback(results, status) {
                     <h5 class="card-title">${place.name}</h5>
                     <p class="card-text">${place.formatted_address}</p>
                     <p class="card-text">${place.user_ratings_total}</p>
-                    <a href="#" onclick="saveLocation(${place.geometry.location.lat},${place.geometry.location.lng});initMap()"class="btn btn-dark">Shop Details</a>
+                    <a href="#" onclick="locate(shopsData[${index}])" class="btn btn-dark">Locate</a>
+                    <a href="#" onclick="getPictures(shopsData[${index}])" class="btn btn-dark">Photos</a>
+                    <a href="#" onclick="" class="btn btn-dark">Leave a Review</a>
                   </div>
                 </div>
               </div>`
       })
     map.setCenter(results[0].geometry.location);
     shopHTML.innerHTML = shops.join('');
+
+    shopsData = results;
   }
 }
 
@@ -110,4 +114,9 @@ function createMarker(place) {
       infowindow.setContent(place.name);
       infowindow.open(map, marker);
     });
+  }
+
+
+  function locate(shop) {
+    map.setCenter(shop.geometry.location);
   }
