@@ -88,9 +88,9 @@ function callback(results, status) {
                     <h5 class="card-title">${place.name}</h5>
                     <p class="card-text">${place.formatted_address}</p>
                     <p class="card-text">${place.user_ratings_total}</p>
-                    <a href="#" onclick="" class="btn btn-dark">Shop Details</a>
                     <a href="#" onclick="locate(shopsData[${index}])" class="btn btn-dark">Locate</a>
                     <a href="#" onclick="getPictures(shopsData[${index}])" class="btn btn-dark">Photos</a>
+                    <a href="#" onclick="" class="btn btn-dark">Leave a Review</a>
                   </div>
                 </div>
               </div>`
