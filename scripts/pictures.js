@@ -9,7 +9,7 @@ function getPictures(shop) {
             `<div id="card-wrapper">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=400&photoreference=${photo.photo_reference}&key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0"></img>
+                    <img class="shop-picture" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&maxheight=400&photoreference=${photo.photo_reference}&key=AIzaSyDKyAduEhiDy4sefp1ViZ1Ztq7LoEguVt0"></img>
                     </div>
                 </div>
             </div>`
