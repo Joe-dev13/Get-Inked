@@ -1,3 +1,4 @@
+let userId = 0
 // This function takes the value of the given HTML element and places it into an object which is then passed into an array.
 function saveReview(event) {
     // Stops the elemnet from refreshing once clicked. 
@@ -6,6 +7,7 @@ function saveReview(event) {
     const comments = [];
     // An object that contains the values of the HTML elements.
     let text = {
+        id : userId++,
         comment : document.getElementById('exampleFormControlTextarea1').value,
         name : document.getElementById('exampleFormControlInput1').value,
         starRating : document.getElementById('exampleFormControlSelect1').value
@@ -17,12 +19,11 @@ function saveReview(event) {
     document.getElementById('comments').appendChild(reviews);
     reviews.innerHTML = renderComments(comments)
 };
-
-
 // This function takes in the comments array and maps over it to return another array that is then passed into the rendered card.
 function renderComments(comments) {
     // Built in map function used to inject the data from the comments array in to the card.
     let commentsReview = comments.map(review => {
+        writeUserData(`${review.name}`,`${review.comment}`,`${review.starRating}`);
         // Returning the rendered card with the data add through templet literal's.
         return `
         <div id="card-wrapper">
@@ -40,6 +41,25 @@ function renderComments(comments) {
     // Returning the new array 
     return commentsReview;
 }
+// Get a reference to the database service
+var database = firebase.database();
+const events = database.ref('Shop-Reviews')
+const query = events.orderByChild('Joeseph Epherson')
+query.on('value', snap =>{
+    console.log(snap, "snapped on em")
+})
+function writeUserData(userId, name, comment, starRating) {
+    database.ref('Shop-Reviews/'+ userId).push({
+        name: document.getElementById('exampleFormControlInput1').value,
+        comment: document.getElementById('exampleFormControlTextarea1').value,
+        starRating : document.getElementById('exampleFormControlSelect1').value,
+    });
+    return firebase.database().ref('/Shop-Reviews/' + userId).once('value').then(function(snapshot) {
+        var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+            console.log(snapshot.val())
+    });
+};
+// var userId = firebase.auth().currentUser.uid;
 // This Function renders the form that is filled out to the DOM.
 function renderForms() {
     return `
@@ -70,6 +90,8 @@ function renderForms() {
     `
 };
 // Setting the HTML of the forms div equal to the result of the renderForms() function.
-document.querySelector('.shops-review').innerHTML = renderForms();
+// document.getElementById('reviewButton').addEventListener('click', () => {
+        document.getElementById('review').innerHTML = renderForms();
+// });
 // Taking the submitButton and adding a click event listener to it that runs the saveReview() once the event has happened.
 document.getElementById('submitButton').addEventListener('click', saveReview);
