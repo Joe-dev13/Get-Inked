@@ -7,18 +7,19 @@
   list-style: none;
   text-decoration: none;
 }
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0px;
     background-color: lightgray;
   }
-
 .contentWrapper {
     box-sizing: border-box;
     margin: 0px;
 }
 
+
+
+/* start header */
 .header {
     display: flex;
     background: linear-gradient(0.25turn, #cfcfcf, #efeff3, #0a0a0a);
@@ -30,27 +31,22 @@ body {
     align-items: center;
     font-weight: 700;
 }
-
 .header::after {
   content: "";
   height: 75px;
 }
-
 .title{
   font-family: 'Lobster', cursive;
 }
-
 #logo {
   width: 75px;
   height: 75px;
 }
-
 .search{
   display: flex;
   justify-content: space-between;
   margin-right: -240px;
 }
-
 .search__input{
   height: 40px;
   display: flex;
@@ -60,12 +56,17 @@ body {
   border-radius: 10px;
   width: 500px;
 }
+/* end header */
+
+
 
 .content {
     display: flex;
     top: 50px;
     width: 100vw;
 }
+
+
 
 /* start sidebar */
 .sidebar{
@@ -82,21 +83,17 @@ body {
   transition: .3s ease;
   z-index: 10;
 }
-
 .sidebar:hover{
   width: 200px;
   overflow-y: scroll;
 }
-
 .sidebar .menu-item{
   padding: 10px;
 }
-
 .sidebar .menu-item:hover{
   background-color: #d6d6d6;
   cursor: pointer;
 }
-
 .sidebar .menu-item a{
   font-size: 25px;
   width: 40px;
@@ -112,7 +109,6 @@ body {
   padding-right: 20px;
   color: #8F8A8E;
 }
-
 .sidebar .menu-item:hover > a{
   color: black;
 }
@@ -121,6 +117,9 @@ body {
 }
 /* end sidebar */
 
+
+
+/* start list of shops */
 .shop-view {
     display: flex;
     flex-direction: column;
@@ -129,7 +128,6 @@ body {
     margin-left: 70px;
     width: 80vw;
 }
-
 #shops {
     background-color: none;
     overflow-x: scroll;
@@ -137,59 +135,75 @@ body {
     width: 80vw;
     align-content: center;
 }
-
 #card-wrapper {
   display: flex;
   justify-content: center;
   
 }
-
 .card-title{
   white-space: nowrap;
   overflow: hidden;
 }
+/* end list of shops */
 
+
+
+/* start map */
 .shops-map {
     margin-top: 20px;
     background-color: yellow;
     height: 100%;
     width: 100vw;
-    /*display: none;            <- this is how we change from map to gallery */
+                    /*display: none;            <- this is how we change from map to gallery */
+                      /* Set the size of the div element that contains the map */
 }
+#map {
+  height: 400px;
+                  /* The height is 400 pixels */
+  width: 80vw;
+                  /* The width is the width of the web page */
+}
+/* end map */
 
+
+
+/* start pictures */
 .shops-gallery {
   display: block;
   height: 400px;
   width: 80vw;
   display: none;
 
-    /*display: none;            <- this is how we change from gallery map */
+                    /*display: none;            <- this is how we change from gallery map */
 }
-
 .gallery {
   display: flex;
   height: 400px;
   width: 80vw;
   overflow-x: scroll;
 }
-
-/* Set the size of the div element that contains the map */
-#map {
-    height: 400px;
-    /* The height is 400 pixels */
-    width: 80vw;
-    /* The width is the width of the web page */
+.shop-picture{
+  height: 100%;
+  width: 100%;
+  border: 3px black solid;
 }
+/* end pictures */
 
+
+
+/* start shops contact */
 .shops-contact {
   padding: 2.5rem;
   display: none;
 }
-
 .contact-btn {
   background-color: #d6d6d6;
 }
-/*shops review start*/
+/* end shops contact */
+
+
+
+/* start shops review */
 .shops-review {
   display: flex;
   justify-content: center;
@@ -197,16 +211,44 @@ body {
   align-content: center;
   margin-top: 20px;
 }
-
 .form-group {
   width: 1000px;
 }
-
 #comments{
   display: flex;
   flex-flow: wrap;
 }
-/* shops review end*/
+/* end shops review */
+
+
+
+/* start about us  */
+.carousel {
+  margin-bottom: 4rem;
+}
+                    /* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+                    /* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+  background-color: #777;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 32rem;
+}
+/* end about us  */
+
+
+
+
 
 .legal{
   display: flex;
