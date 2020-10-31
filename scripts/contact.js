@@ -45,7 +45,7 @@
 
 // document.querySelector('.shops-contact').innerHTML = renderBookings();
 
-function renderContact() {
+function renderContactHtml() {
   return ` 
     <a href="https://github.com/Joe-dev13" class="btn btn-primary btn-lg active" tabindex="-1" role="button" aria-disabled="true" target="_blank">Contact Joe</a>
     <a href="https://github.com/indexcloud" class="btn btn-primary btn-lg active" tabindex="-1" role="button" aria-disabled="true" target="_blank">Contact Jason</a>
@@ -54,5 +54,5 @@ function renderContact() {
   `;
 };
 
-document.getElementById("contact").innerHTML = renderContact();
+document.getElementById("contact").innerHTML = renderContactHtml();
 

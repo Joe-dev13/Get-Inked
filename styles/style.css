@@ -37,6 +37,7 @@ body {
 }
 .title{
   font-family: 'Lobster', cursive;
+  margin: 0 auto;
 }
 #logo {
   width: 75px;
@@ -45,8 +46,11 @@ body {
 .search{
   display: flex;
   justify-content: space-between;
-  margin-right: -240px;
 }
+#location{
+    margin: 0 10px;
+} 
+
 .search__input{
   height: 40px;
   display: flex;
@@ -144,6 +148,14 @@ body {
   white-space: nowrap;
   overflow: hidden;
 }
+
+.card-btns{
+    display: flex;
+}
+
+.card-btns > a{
+    margin: 2px 2px;
+}
 /* end list of shops */
 
 
@@ -212,7 +224,7 @@ body {
   margin-top: 20px;
 }
 .form-group {
-  width: 1000px;
+  width: 80vw;
 }
 #comments{
   display: flex;
