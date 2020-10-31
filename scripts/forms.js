@@ -1,4 +1,5 @@
 let userId = 0
+
 // This function takes the value of the given HTML element and places it into an object which is then passed into an array.
 function saveReview(event) {
     // Stops the elemnet from refreshing once clicked. 
@@ -59,7 +60,6 @@ function writeUserData(userId, name, comment, starRating) {
             console.log(snapshot.val())
     });
 };
-// var userId = firebase.auth().currentUser.uid;
 // This Function renders the form that is filled out to the DOM.
 function renderForms() {
     return `
@@ -89,9 +89,15 @@ function renderForms() {
     </div>
     `
 };
-// Setting the HTML of the forms div equal to the result of the renderForms() function.
-// document.getElementById('reviewButton').addEventListener('click', () => {
-        document.getElementById('review').innerHTML = renderForms();
-// });
+// Setting the HTML of the forms div equal to the result of the renderForms() function
+window.onload = function() {
+    let reviewButton = document.getElementById('reviewButton');
+    let reviewHTML = document.getElementById('review');
+    let tempForm = renderForms()
+    reviewButton.addEventListener('click', () => {
+        reviewHTML.innerHTML = tempForm;
+        document.getElementById('submitButton').addEventListener('click', saveReview);
+    });
+};
+
 // Taking the submitButton and adding a click event listener to it that runs the saveReview() once the event has happened.
-document.getElementById('submitButton').addEventListener('click', saveReview);

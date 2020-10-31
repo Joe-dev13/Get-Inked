@@ -90,7 +90,7 @@ function callback(results, status) {
                     <p class="card-text">${place.user_ratings_total}</p>
                     <a href="#" onclick="locate(shopsData[${index}])" class="btn btn-dark">Locate</a>
                     <a href="#" onclick="getPictures(shopsData[${index}])" class="btn btn-dark">Photos</a>
-                    <a href="#" onclick="" class="btn btn-dark">Leave a Review</a>
+                    <a id="reviewButton" href="#" onclick="" class="btn btn-dark">Leave a Review</a>
                   </div>
                 </div>
               </div>`
