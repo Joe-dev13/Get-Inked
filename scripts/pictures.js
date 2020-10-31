@@ -18,5 +18,21 @@ function getPictures(shop) {
     });
 };
 
+axios.get('https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=6a71588541dfa4d70b6c0c888cb79f94&text=tattoo+ideas&tags=tattoo+ideas&max_upload_date=2020-08-01&format=json&nojsoncallback=1')
+.then(function(response){
+    console.log(response);
+    var photos = response.data.photos.photo;
+    var imageHtml = photos.map(function(currentPhoto){
+      return `<div id="card-wrapper">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                        <img class="shop-picture" src="https://live.staticflickr.com/${currentPhoto.server}/${currentPhoto.id}_${currentPhoto.secret}.jpg"></img>
+                    </div>
+                </div>
+              </div>`
+     }).join("");
+     galleryImage.innerHTML = imageHtml;
+});
+
 
 
