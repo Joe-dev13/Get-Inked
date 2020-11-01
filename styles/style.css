@@ -1,286 +1,274 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500");
 
-
-*{
-  margin: 0px;
-  padding: 0px;
-  list-style: none;
-  text-decoration: none;
+* {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	text-decoration: none;
 }
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0px;
-    background-color: lightgray;
-  }
-.contentWrapper {
-    box-sizing: border-box;
-    margin: 0px;
+	font-family: "Roboto", sans-serif;
+	margin: 0px;
+	background-color: lightgray;
 }
-
-
+.contentWrapper {
+	box-sizing: border-box;
+	margin: 0px;
+}
 
 /* start header */
 .header {
-    display: flex;
-    background: linear-gradient(0.25turn, #cfcfcf, #efeff3, #0a0a0a);
-    width: 100vw;
-    position: fixed;
-    z-index: 10;
-    height: 75px;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 700;
+	display: flex;
+	background: linear-gradient(0.25turn, #cfcfcf, #efeff3, #0a0a0a);
+	width: 100vw;
+	position: fixed;
+	z-index: 10;
+	height: 75px;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 700;
 }
 .header::after {
-  content: "";
-  height: 75px;
+	content: "";
+	height: 75px;
 }
-.title{
-  font-family: 'Lobster', cursive;
-  margin: 0 auto;
+.title {
+	font-family: "Lobster", cursive;
+	margin: 0 auto;
 }
-#logo {
-  width: 75px;
-  height: 75px;
-}
-.search{
-  display: flex;
-  justify-content: space-between;
-}
-#location{
-    margin: 0 10px;
-} 
 
-.search__input{
-  height: 40px;
-  display: flex;
-  align-content: center;
-  border: 2px solid #14213D;
-  justify-content: center;
-  border-radius: 10px;
-  width: 500px;
+#logo {
+	width: 75px;
+	height: 75px;
+}
+.search {
+	display: flex;
+	justify-content: space-between;
+}
+#location {
+	margin: 0 10px;
+}
+
+.search__input {
+	height: 40px;
+	display: flex;
+	align-content: center;
+	border: 2px solid #14213d;
+	justify-content: center;
+	border-radius: 10px;
+	width: 400px;
 }
 /* end header */
 
-
-
 .content {
-    display: flex;
-    top: 50px;
-    width: 100vw;
+	display: flex;
+	top: 50px;
+	width: 100vw;
+	justify-content: space-between;
 }
-
-
 
 /* start sidebar */
-.sidebar{
-  position: fixed;
-  margin-top: 80px;
-  width: 70px;
-  height: 100vh;
-  background-color: white;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  box-shadow: 0px 0px 20px #d4d4d4;
-  transition: .3s ease;
-  z-index: 10;
+.sidebar {
+	position: fixed;
+	margin-top: 80px;
+	width: 70px;
+	height: 100vh;
+	background-color: white;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	box-shadow: 0px 0px 20px #d4d4d4;
+	transition: 0.3s ease;
+	z-index: 10;
 }
-.sidebar:hover{
-  width: 200px;
-  overflow-y: scroll;
+.sidebar:hover {
+	width: 200px;
+	overflow-y: scroll;
 }
-.sidebar .menu-item{
-  padding: 10px;
+.sidebar .menu-item {
+	padding: 10px;
 }
-.sidebar .menu-item:hover{
-  background-color: #d6d6d6;
-  cursor: pointer;
+.sidebar .menu-item:hover {
+	background-color: #d6d6d6;
+	cursor: pointer;
 }
-.sidebar .menu-item a{
-  font-size: 25px;
-  width: 40px;
-  padding: 5px;
-  padding-left: 20px;
-  color: #8F8A8E;
-  text-decoration: none;
+.sidebar .menu-item a {
+	font-size: 25px;
+	width: 40px;
+	padding: 5px;
+	padding-left: 20px;
+	color: #8f8a8e;
+	text-decoration: none;
 }
-.sidebar .menu-item a i{
-  font-size: 25px;
-  width: 40px;
-  padding-left: 0px;
-  padding-right: 20px;
-  color: #8F8A8E;
+.sidebar .menu-item a i {
+	font-size: 25px;
+	width: 40px;
+	padding-left: 0px;
+	padding-right: 20px;
+	color: #8f8a8e;
 }
-.sidebar .menu-item:hover > a{
-  color: black;
+.sidebar .menu-item:hover > a {
+	color: black;
 }
-.sidebar .menu-item:hover > a i{
-  color: black;
+.sidebar .menu-item:hover > a i {
+	color: black;
 }
 /* end sidebar */
 
-
-
 /* start list of shops */
 .shop-view {
-    display: flex;
-    flex-direction: column;
-    margin-top: 80px;
-    position: relative;
-    margin-left: 70px;
-    width: 80vw;
+	display: flex;
+	flex-direction: column;
+	margin-top: 80px;
+	position: relative;
+	margin-left: 80px;
+	width: 80vw;
 }
 #shops {
-    background-color: none;
-    overflow-x: scroll;
-    display: flex;
-    width: 80vw;
-    align-content: center;
+	background-color: none;
+	overflow-x: scroll;
+	display: flex;
+	width: 80vw;
+	align-content: center;
 }
 #card-wrapper {
-  display: flex;
-  justify-content: center;
-  
+	display: flex;
+	justify-content: center;
 }
-.card-title{
-  white-space: nowrap;
-  overflow: hidden;
-}
-
-.card-btns{
-    display: flex;
+.card-title {
+	white-space: nowrap;
+	overflow: hidden;
 }
 
-.card-btns > a{
-    margin: 2px 2px;
+.card-btns {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card-btns > a {
+	margin: 2px 2px;
 }
 /* end list of shops */
 
-
-
 /* start map */
 .shops-map {
-    margin-top: 20px;
-    background-color: yellow;
-    height: 100%;
-    width: 100vw;
-                    /*display: none;            <- this is how we change from map to gallery */
-                      /* Set the size of the div element that contains the map */
+	margin-top: 10px;
+	background-color: yellow;
+	height: 100%;
+	width: 100vw;
+	margin-bottom: 20px;
+	/*display: none;            <- this is how we change from map to gallery */
+	/* Set the size of the div element that contains the map */
 }
 #map {
-  height: 400px;
-                  /* The height is 400 pixels */
-  width: 80vw;
-                  /* The width is the width of the web page */
+	height: 400px;
+	/* The height is 400 pixels */
+	width: 80vw;
+	/* The width is the width of the web page */
 }
 /* end map */
 
-
-
 /* start pictures */
 .shops-gallery {
-  display: block;
-  height: 400px;
-  width: 80vw;
-  display: none;
+	margin-top: 10px;
+	height: 400px;
+	width: 80vw;
+	display: none;
+	overflow-x: scroll;
+	margin-bottom: 20px;
+	/*display: none;            <- this is how we change from gallery map */
+}
 
-                    /*display: none;            <- this is how we change from gallery map */
-}
-.gallery {
-  display: flex;
-  height: 400px;
-  width: 80vw;
-  overflow-x: scroll;
-}
-.shop-picture{
-  height: 100%;
-  width: 100%;
-  border: 3px black solid;
+.shop-picture {
+	height: 100%;
+	width: 100%;
+	border: 3px black solid;
 }
 /* end pictures */
 
-
-
 /* start shops contact */
 .shops-contact {
-  padding: 2.5rem;
-  display: none;
-}
-.contact-btn {
-  background-color: #d6d6d6;
+	padding: 2.5rem;
+	font-size: 1rem;
+	font-weight: 400;
+	display: none;
+	justify-content: space-between;
 }
 /* end shops contact */
 
-
-
 /* start shops review */
 .shops-review {
-  display: flex;
-  justify-content: center;
-  width: 80vw;
-  align-content: center;
-  margin-top: 20px;
+	display: flex;
+	justify-content: center;
+	width: 80vw;
+	align-content: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: auto;
 }
 .form-group {
-  width: 80vw;
+	width: 80vw;
 }
-#comments{
-  display: flex;
-  flex-flow: wrap;
+#comments {
+	display: flex;
+	flex-flow: wrap;
 }
-#review{
-    display: none;
-} 
+#review {
+	display: none;
+}
+
 /* end shops review */
-
-
 
 /* start about us  */
 .carousel {
-  margin-bottom: 4rem;
+	margin-bottom: 4rem;
 }
-                    /* Since positioning the image, we need to help out the caption */
+/* Since positioning the image, we need to help out the caption */
 .carousel-caption {
-  bottom: 3rem;
-  z-index: 10;
+	bottom: 3rem;
+	z-index: 10;
 }
 
-                    /* Declare heights because of positioning of img element */
+/* Declare heights because of positioning of img element */
 .carousel-item {
-  height: 32rem;
-  background-color: #777;
+	height: 32rem;
+	background-color: #777;
 }
 .carousel-item > img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  height: 32rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 32rem;
 }
-#about{
-    display: none;
+#about {
+	display: none;
 }
 /* end about us  */
 
-
-
-
-
-.legal{
-  display: flex;
-  justify-content: center;
+.legal {
+	display: flex;
+	justify-content: center;
 }
 
-.ads{
-  margin-left: 10px;
-  width: 13vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: end;
-  border: 1px black solid;  
-  margin-top: 80px;
-  background-color:#909090
-  ;
+.ads {
+	margin-left: 10px;
+	width: 150px;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	border: 1px black solid;
+	margin-top: 80px;
+	background-color: #909090;
+}
+
+@media only screen and (max-width: 800px) {
+	.title {
+		font-size: 1.5rem;
+	}
+
+	.search__input {
+		width: 250px;
+	}
 }

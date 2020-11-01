@@ -1,5 +1,5 @@
-function renderAbout_Us(){
-  return `
+function renderAbout_Us() {
+	return `
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -13,7 +13,7 @@ function renderAbout_Us(){
         <div class="carousel-caption text-left">
           <h1>Our Mission</h1>
           <p>To help you decide on your next tattoo! Whether you need some ideas or just need to find the right place, we have it all!</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Get Inked!</a></p>
+          <p><a class="btn btn-lg btn-secondary" href="#" role="button">Get Inked!</a></p>
         </div>
       </div>
     </div>
@@ -23,7 +23,7 @@ function renderAbout_Us(){
         <div class="carousel-caption">
           <h1>About Us</h1>
           <p>We are tattoo fanatics. We think about tattoos all day everyday. We eat, sleep, and breathe just to get our next tatoo. The excitement of getting our next tattoo is what wakes us up in the morning. We sleep so we can dream of our next tattoo.</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Get Inked!</a></p>
+          <p><a class="btn btn-lg btn-secondary" href="#" role="button">Get Inked!</a></p>
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@ function renderAbout_Us(){
         <div class="carousel-caption text-right">
           <h1>Why trust us?</h1>
           <p>100% of our staff either has tattoos or is thinking about getting our next tatoo. Combined, our staff has an average of 7 tatoos! When it comes to getting tatted, we know what's up!</p>
-          <p><a class="btn btn-lg btn-primary" href="#" role="button">Get Inked!</a></p>
+          <p><a class="btn btn-lg btn-secondary" href="#" role="button">Get Inked!</a></p>
         </div>
       </div>
     </div>
@@ -48,6 +48,6 @@ function renderAbout_Us(){
   </a>
 </div>
   `;
-};
+}
 
 document.getElementById("about").innerHTML = renderAbout_Us();
