@@ -5,3 +5,14 @@ This website is desinged to provided a tattoo locating service, with the help of
 This website was inspired by the lack of a centerlaized tattoo shop locator. It is designed to help the customer find a tattoo idea as well as a shop to have the 
 tattoo preformed.
 
+# UI Framework
+
+Bootstrap and Flexbox
+
+# APIs
+
+Google Maps Place and Photo API, Flickr Photo API
+
+# Database
+
+Firebase
