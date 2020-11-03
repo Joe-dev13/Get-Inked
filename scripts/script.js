@@ -109,7 +109,7 @@ function callback(results, status) {
                   <div class="card-body">
                     <h5 class="card-title">${place.name}</h5>
                     <p class="card-text">${place.formatted_address}</p>
-                    <p class="card-text">Ratings: ${place.user_ratings_total} Customer Reviews</p>
+                    <p class="card-text">${place.user_ratings_total} Customer Reviews</p>
                     <div class="card-btns">
                       <a href="#" onclick="renderLocations();locate(shopsData[${index}])" class="btn btn-dark">Locate</a>
                       <a href="#" onclick="renderPictures();getPhotos(shopsData[${index}])" class="btn btn-dark">Photos</a>

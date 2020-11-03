@@ -1,36 +1,33 @@
 let userId = 0;
-
 // This function takes the value of the given HTML element and places it into an object which is then passed into an array.
 function saveReview(event) {
-	// Stops the elemnet from refreshing once clicked.
+    let comment = document.getElementById("exampleFormControlTextarea1").value
+    let name = document.getElementById("exampleFormControlInput1").value
+    let starRating = document.getElementById("exampleFormControlSelect1").value
 	event.preventDefault();
-	// An emtey  array for the object to be added to.
 	const comments = [];
-	// An object that contains the values of the HTML elements.
 	let text = {
 		id: userId++,
-		comment: document.getElementById("exampleFormControlTextarea1").value,
-		name: document.getElementById("exampleFormControlInput1").value,
-		starRating: document.getElementById("exampleFormControlSelect1").value,
-	};
-	// Adding the text object to the comments array.
+		comment, 
+		name, 
+		starRating, 
+    };
 	comments.push(text);
-	// Setting the HTML of the comments div equal to the result of the renderComments function.
 	let reviews = document.createElement("div");
-	document.getElementById("comments").appendChild(reviews);
-	reviews.innerHTML = renderComments(comments);
+    reviews.innerHTML = renderComments(comments);
+    // Writing to DataBase
+    writeUserData(
+        userId,
+        name,
+        comment,
+        starRating
+    );
+    userId++;
 }
 // This function takes in the comments array and maps over it to return another array that is then passed into the rendered card.
 function renderComments(comments) {
-	// Built in map function used to inject the data from the comments array in to the card.
 	let commentsReview = comments
 		.map((review) => {
-			writeUserData(
-				`${review.name}`,
-				`${review.comment}`,
-				`${review.starRating}`
-			);
-			// Returning the rendered card with the data add through templet literal's.
 			return `
         <div id="card-wrapper">
             <div class="card" style="width: 18rem;">
@@ -42,34 +39,37 @@ function renderComments(comments) {
             </div>
         </div>
         `;
-			// Joining the different indexs together.
 		})
 		.join("");
-	// Returning the new array
 	return commentsReview;
 }
 // Get a reference to the database service
 var database = firebase.database();
-const events = database.ref("Shop-Reviews");
-const query = events.orderByChild("Joeseph Epherson");
-query.on("value", (snap) => {
-	console.log(snap, "snapped on em");
+const events = database.ref();
+const query = events.child("Shop-Reviews");
+query.on("value", snap => {
+    document.getElementById("comments").innerHTML = snap.val().map(review => {
+        return `
+        <div id="card-wrapper">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">${review.name}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">${review.starRating} star's</h6>
+                    <p class="card-text">${review.comment}</p>
+                </div>
+            </div>
+        </div>
+        `;
+    }).join("");
 });
+//Write to DataBase
 function writeUserData(userId, name, comment, starRating) {
-	database.ref("Shop-Reviews/" + userId).push({
-		name: document.getElementById("exampleFormControlInput1").value,
-		comment: document.getElementById("exampleFormControlTextarea1").value,
-		starRating: document.getElementById("exampleFormControlSelect1").value,
+    // Adding data to the userId node
+	database.ref("Shop-Reviews/" + userId).set({
+		name,
+		comment,
+		starRating
 	});
-	return firebase
-		.database()
-		.ref("/Shop-Reviews/" + userId)
-		.once("value")
-		.then(function (snapshot) {
-			var username =
-				(snapshot.val() && snapshot.val().username) || "Anonymous";
-			console.log(snapshot.val());
-		});
 }
 // This Function renders the form that is filled out to the DOM.
 function renderForms() {
