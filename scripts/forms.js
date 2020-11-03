@@ -100,20 +100,15 @@ function renderForms() {
     </div>
     `;
 }
-// Setting the HTML of the forms div equal to the result of the renderForms() function
-document.getElementById("review").innerHTML = renderForms();
-document.getElementById("submitButton").addEventListener("click", saveReview);
 
-// window.onload = function () {
-// 	//let reviewButton = document.getElementById("reviewButton");
-// 	//let reviewHTML = document.getElementById("review");
-// 	//let tempForm = renderForms();
-// 	//reviewButton.addEventListener("click", () => {
-// 		//reviewHTML.innerHTML = tempForm;
-// 		document
-// 			.getElementById("submitButton")
-// 			.addEventListener("click", saveReview);
-// 	});
-// };
-
-// Taking the submitButton and adding a click event listener to it that runs the saveReview() once the event has happened.
+window.onload = function() {
+    let reviewHTML = document.getElementById('review');
+    let tempForm = renderForms()
+    let reviewButton = document.getElementsByClassName('reviewButton');
+    for (let i = 0; i < reviewButton.length; i++) {
+        reviewButton[i].addEventListener('click', () => {
+            reviewHTML.innerHTML = tempForm;
+            document.getElementById('submitButton').addEventListener('click', saveReview);
+        });
+    };
+};
